@@ -1,0 +1,16 @@
+{
+  "raw_rows": 541909,
+  "duplicates_removed_used_columns": 5270,
+  "retained_transaction_rows": 478836,
+  "eligible_products": 2181,
+  "selected_products": 90,
+  "selection_end": "2011-05-26",
+  "training_zero_fraction": 0.7476459510357816,
+  "group_counts": {
+    "Intermittent": 90
+  },
+  "budget_reference_CU": 33277.288135593226,
+  "source": "Chen, D. (2015). Online Retail. UCI Machine Learning Repository. DOI 10.24432/C5BW33. CC BY 4.0",
+  "customer_fields_read": false,
+  "zero_assumption": "No recorded positive sale = zero proxy; availability unknown"
+}

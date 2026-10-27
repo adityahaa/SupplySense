@@ -1,0 +1,10 @@
+{
+  "completed_utc": "2026-10-27T14:46:15.196142+00:00",
+  "simulations": 216,
+  "test_origins": 2,
+  "test_observations_per_model": 5040,
+  "champion": "mean_28",
+  "training_rows": 236880,
+  "protocol_sha256": "69d58c245c6a24d5083a5fdacdb28a918b39f887bb4c494e05ac8a423eb96e98",
+  "claims": "Independent dataset replication; now inspected; no significance or novelty claim"
+}

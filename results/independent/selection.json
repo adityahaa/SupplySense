@@ -1,0 +1,5 @@
+{
+  "champion": "mean_28",
+  "selected_using": "validation MAE only",
+  "model_refit": false
+}
