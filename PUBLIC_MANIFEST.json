@@ -40,6 +40,7 @@
     "results/independent/intermittency_results.csv": "e10b2de33b42a3f4c2ca3ef89f8fdc16ee1491dd810c9ac8a6b6ad7116833c24",
     "results/independent/mae_cluster_intervals.csv": "facb543b9cc95cf12540e91ea3d1993336fa7c17a04f1d96679391f9391104b8",
     "README.md": "4b1e52ab0a2abbcd0a47adccb9a120df711589e2ae45500cc89c8b0019d5e994",
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
     ".gitignore": "a1046fd327cbf50d75588e9c17b733cbca7147785ce825341f5216f972be5751"
   },
   "excluded": "Original M5 bundles, raw datasets, local handoff, logs, XML host metadata, notebooks with outputs, credentials, caches and environments",
