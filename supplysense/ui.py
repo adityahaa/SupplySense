@@ -35,6 +35,8 @@ def setup_style():
     [data-testid="stMetricValue"] {color:#153650;font-size:1.9rem;}
     [data-testid="stExpander"] {background:white;border-color:#dce6ee;border-radius:12px;}
     [data-testid="stDataFrame"] {border:1px solid #dce6ee;border-radius:10px;}
+    [data-testid="stMarkdownContainer"] table {display:block;max-width:100%;overflow-x:auto;}
+    [data-testid="stMarkdownContainer"] code {overflow-wrap:anywhere;}
     .ss-brand {font-size:1.7rem;font-weight:750;letter-spacing:-.8px;color:#fff;margin-top:0;}
     .ss-tagline {font-size:.82rem;line-height:1.5;color:#afc9dc;margin:4px 0 25px;}
     .ss-kicker {font-size:.72rem;font-weight:700;letter-spacing:1.5px;color:#087f8c;text-transform:uppercase;}

@@ -6,9 +6,9 @@ A seven-page Streamlit portfolio application connecting historical sales forecas
 
 ## Public demo
 
-Hosting: Streamlit Community Cloud. Deployment URL will be recorded after successful verification; no live deployment is claimed by this placeholder.
+[Open SupplySense](https://supplysense-adityahaa.streamlit.app/) · [GitHub source](https://github.com/adityahaa/SupplySense). Hosted on free Streamlit Community Cloud with Python 3.12. The application and anonymous HTTP access were verified on 28 October 2026; see [verification details](docs/PUBLIC_VERIFICATION.md).
 
-The public demo uses an independently evaluated, attributed **UCI Online Retail** subset. It is separate from the original local M5 experiment. Public artifacts contain 90 selected product series and saved predictions; visitors need no dataset upload, Python installation or GitHub sign-in once the public app is deployed. No model trains when a page refreshes.
+The public demo uses an independently evaluated, attributed **UCI Online Retail** subset. It is separate from the original local M5 experiment. Public artifacts contain 90 selected product series and saved predictions; visitors need no dataset upload, Python installation or GitHub sign-in. No model trains when a page refreshes.
 
 Free Community Cloud apps can sleep after 12 hours without traffic. Anyone with access can use the wake-up button; cold starts can take time. Shared resources can throttle and no always-on performance is promised. No paid API, payment method or billing activation is required by this project. See [official hosting limits](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app).
 

@@ -21,7 +21,7 @@
     "supplysense/inventory.py": "48fe65cb92486de95e3deace9f7cf609380340a2a713df0b738cf7774a0024c1",
     "supplysense/pages.py": "7fdaf0d128240a002648f99a846b8758c6b1359b196c94b7e33291ceac3f4f84",
     "supplysense/research.py": "b5681232309ae5be499c604f58db378e75af4689005f198870ac3e85e89df5cf",
-    "supplysense/ui.py": "a667220499709c98c55fa3256afee5e936fabff85912c56c3b279022ebbbf3ca",
+    "supplysense/ui.py": "9bf7670634fe7926c050019644551a461c0954a891cdc0cf591d574690414f3c",
     "supplysense/__init__.py": "1f22654c2de8bb97cfb3a00d9fd7d6308649817f96214fa47ffe269e66e78e4f",
     "docs/PUBLIC_DATA_NOTICE.md": "7d6147eade33875873caee8ce09819d9085d797806bfc17aa8844900081585ef",
     "docs/RESEARCH_EXTENSION.md": "b4532f5a81a4ff098dbaef7ec2ddf85befb00cabf5b349c3dadd8b5d796b6389",
@@ -39,7 +39,7 @@
     "results/independent/sensitivity_results.csv": "5c2e831d31051ba6d127d27dd680d9959658d7944f7cc649f5e9ac960307ec77",
     "results/independent/intermittency_results.csv": "e10b2de33b42a3f4c2ca3ef89f8fdc16ee1491dd810c9ac8a6b6ad7116833c24",
     "results/independent/mae_cluster_intervals.csv": "facb543b9cc95cf12540e91ea3d1993336fa7c17a04f1d96679391f9391104b8",
-    "README.md": "c5032caa449f2a6986820a73dd14d7048742cd80dc21bea8a08edbdd7e4e40a6",
+    "README.md": "4b1e52ab0a2abbcd0a47adccb9a120df711589e2ae45500cc89c8b0019d5e994",
     ".gitignore": "a1046fd327cbf50d75588e9c17b733cbca7147785ce825341f5216f972be5751"
   },
   "excluded": "Original M5 bundles, raw datasets, local handoff, logs, XML host metadata, notebooks with outputs, credentials, caches and environments",
