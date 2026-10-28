@@ -19,7 +19,9 @@ def setup_style():
     html,body,[data-testid="stApp"] {font-family:"Segoe UI",Arial,sans-serif;}
     [data-testid="stAppViewContainer"] {background:#f4f7fb;}
     [data-testid="stHeader"] {background:rgba(244,247,251,.95);}
+    [data-testid="stAppDeployButton"] {display:none;}
     [data-testid="stSidebar"] {background:#11263d;border-right:1px solid #234058;}
+    [data-testid="stSidebarCollapseButton"] button {color:#e2edf5;}
     [data-testid="stSidebar"] h2,[data-testid="stSidebar"] h3,
     [data-testid="stSidebar"] p,[data-testid="stSidebar"] label,
     [data-testid="stSidebar"] [data-testid="stCaptionContainer"] {color:#e2edf5;}

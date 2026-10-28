@@ -14,6 +14,8 @@ Free Community Cloud apps can sleep after 12 hours without traffic. Anyone with 
 
 ## Walkthrough
 
+![SupplySense public desktop dashboard](docs/screenshots/public_desktop_overview.png)
+
 1. **Overview:** check the dataset and historical evaluation dates.
 2. **Forecast explorer:** choose a product/model; inspect actuals, prediction bands and signed errors; download CSV.
 3. **Model comparison:** compare measured MAE, RMSE, WAPE, bias and coverage. Coverage is not accuracy.
@@ -23,6 +25,8 @@ Free Community Cloud apps can sleep after 12 hours without traffic. Anyone with 
 7. **Research & methodology:** read the frozen protocol, all-origin findings, uncertainty and limitations.
 
 On narrow screens, use the upper-left arrow to open navigation. Store means one UK online retailer; category means the training-defined demand-frequency group. All 90 selected products are intermittent under the frozen definition; no frequent-demand comparison is supported.
+
+Wide research tables scroll horizontally on mobile. View the [captured mobile layout](docs/screenshots/public_mobile_overview.png). Screenshots show executed historical results, not mockups.
 
 ## Verified research, with negative findings
 
@@ -55,3 +59,9 @@ For replication install `requirements-dev.txt` and `openpyxl`, obtain the UCI do
 Run public core tests with `python -m pytest tests/test_core.py tests/test_research.py -q` after installing development dependencies. Full local verification and public-site smoke checks are documented in `docs/PUBLIC_VERIFICATION.md`.
 
 Limits: one retailer, only intermittent products in the fixed sample, two final origins, censored positive-sales proxy, assumed costs, finite-horizon policies and daily residual bands without a dependence-aware coverage guarantee. Product-cluster bootstrap intervals do not capture cross-product shocks. Shared-budget simulations do not have independent-product confidence intervals. No causal effect, real savings or current-demand forecasts are claimed.
+
+## Factual portfolio bullets
+
+- Built and deployed a seven-page Streamlit application linking saved historical forecasts to configurable inventory simulations, with desktop/mobile browser checks and 27 passing local automated tests.
+- Evaluated four forecasting methods on 90 UCI retail products over two final chronological origins; measured LightGBM MAE of 9.992816 versus seasonal naive 11.387500, while reporting interval undercoverage.
+- Executed 216 reproducible simulated inventory comparisons across budgets, replenishment delays and shortage penalties, preserving cases where forecast-error and operational rankings disagree.
