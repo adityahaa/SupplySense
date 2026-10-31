@@ -62,6 +62,12 @@ Limits: one retailer, only intermittent products in the fixed sample, two final 
 
 ## Factual portfolio bullets
 
-- Built and deployed a seven-page Streamlit application linking saved historical forecasts to configurable inventory simulations, with desktop/mobile browser checks and 27 passing local automated tests.
+- Built and deployed a seven-page Streamlit application linking saved historical forecasts to configurable inventory simulations, with desktop/mobile browser checks and 11 core/research tests passing in the current review (earlier full verification is recorded separately).
 - Evaluated four forecasting methods on 90 UCI retail products over two final chronological origins; measured LightGBM MAE of 9.992816 versus seasonal naive 11.387500, while reporting interval undercoverage.
 - Executed 216 reproducible simulated inventory comparisons across budgets, replenishment delays and shortage penalties, preserving cases where forecast-error and operational rankings disagree.
+
+## Technical documentation and attribution
+
+See the [technical report](docs/TECHNICAL_REPORT.md) for architecture, evaluation scope, and current verification. Maintained in Aditya Hambire's repository; preserve existing Git history and third-party attribution. Repository ownership does not establish sole authorship.
+
+Current checks and unresolved prerequisites: [verification record](docs/VERIFICATION.md).
