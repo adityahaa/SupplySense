@@ -1,13 +1,18 @@
 # SupplySense
 
-**From Forecasts to Better Inventory Decisions**
+Retail demand forecasting and simulated inventory planning, with model comparisons and interactive scenarios.
 
-A seven-page Streamlit portfolio application connecting historical sales forecasts to transparent, simulated inventory decisions. Intended for retail analysts and Engineering Management reviewers. It never places real orders.
+A forecast becomes an inventory decision when stock, cash and delivery delays enter the picture. SupplySense connects historical retail forecasts to an explicit replenishment simulation. Readers can compare methods, inspect product-level errors, change operating assumptions and see how simulated cost and fill rate respond.
 
+The seven-page Streamlit app uses saved results for 90 UCI Online Retail products. Forecast comparisons include seasonal naive, a 28-day mean, Croston SBA and LightGBM. Scenario views make the relationship between prediction error and inventory outcomes inspectable.
+
+[Open the public app](https://supplysense-adityahaa.streamlit.app/) · [Executed results](docs/INDEPENDENT_RESULTS.md) · [Technical report](docs/TECHNICAL_REPORT.md) · [Run locally](#run-on-windows)
+
+![SupplySense dashboard showing the saved public retail experiment](docs/screenshots/public_desktop_overview.png)
 
 ## Contents
 
-[Public demo](#public-demo) · [Walkthrough](#walkthrough) · [Verified research, with negative findings](#verified-research-with-negative-findings) · [Run on Windows](#run-on-windows) · [Architecture and reproduction](#architecture-and-reproduction) · [Factual portfolio bullets](#factual-portfolio-bullets) · [Technical documentation and attribution](#technical-documentation-and-attribution) · [Following a forecast into a stock decision](#following-a-forecast-into-a-stock-decision)
+[Public demo](#public-demo) · [Walkthrough](#walkthrough) · [Forecast and inventory results](#forecast-and-inventory-results) · [Run on Windows](#run-on-windows) · [Architecture and reproduction](#architecture-and-reproduction) · [Factual portfolio bullets](#factual-portfolio-bullets) · [Technical documentation and attribution](#technical-documentation-and-attribution) · [Following a forecast into a stock decision](#following-a-forecast-into-a-stock-decision)
 
 ## Public demo
 
@@ -18,8 +23,6 @@ The public demo uses an independently evaluated, attributed **UCI Online Retail*
 Free Community Cloud apps can sleep after 12 hours without traffic. Anyone with access can use the wake-up button; cold starts can take time. Shared resources can throttle and no always-on performance is promised. No paid API, payment method or billing activation is required by this project. See [official hosting limits](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app).
 
 ## Walkthrough
-
-![SupplySense public desktop dashboard](docs/screenshots/public_desktop_overview.png)
 
 1. **Overview:** check the dataset and historical evaluation dates.
 2. **Forecast explorer:** choose a product/model; inspect actuals, prediction bands and signed errors; download CSV.
@@ -33,7 +36,7 @@ On narrow screens, use the upper-left arrow to open navigation. Store means one 
 
 Wide research tables scroll horizontally on mobile. View the [captured mobile layout](docs/screenshots/public_mobile_overview.png). Screenshots show executed historical results, not mockups.
 
-## Verified research, with negative findings
+## Forecast and inventory results
 
 Two nonoverlapping 28-day test origins yield 5,040 observations per method. Test MAE: LightGBM 9.992816, SBA 11.018639, 28-day mean 11.301219, seasonal naive 11.387500. LightGBM reduces MAE by 12.25% versus seasonal naive. **Validation selected the 28-day mean**, which remains the display default; the inspected test does not reselect it.
 
