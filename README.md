@@ -4,6 +4,11 @@
 
 A seven-page Streamlit portfolio application connecting historical sales forecasts to transparent, simulated inventory decisions. Intended for retail analysts and Engineering Management reviewers. It never places real orders.
 
+
+## Contents
+
+[Public demo](#public-demo) · [Walkthrough](#walkthrough) · [Verified research, with negative findings](#verified-research-with-negative-findings) · [Run on Windows](#run-on-windows) · [Architecture and reproduction](#architecture-and-reproduction) · [Factual portfolio bullets](#factual-portfolio-bullets) · [Technical documentation and attribution](#technical-documentation-and-attribution) · [Following a forecast into a stock decision](#following-a-forecast-into-a-stock-decision)
+
 ## Public demo
 
 [Open SupplySense](https://supplysense-adityahaa.streamlit.app/) · [GitHub source](https://github.com/adityahaa/SupplySense). Hosted on free Streamlit Community Cloud with Python 3.12. The application and anonymous HTTP access were verified on 28 October 2026; see [verification details](docs/PUBLIC_VERIFICATION.md).
@@ -71,3 +76,49 @@ Limits: one retailer, only intermittent products in the fixed sample, two final 
 See the [technical report](docs/TECHNICAL_REPORT.md) for architecture, evaluation scope, and current verification. Maintained in Aditya Hambire's repository; preserve existing Git history and third-party attribution. Repository ownership does not establish sole authorship.
 
 Current checks and unresolved prerequisites: [verification record](docs/VERIFICATION.md).
+
+## Following a forecast into a stock decision
+
+Retail forecasts become useful when they help determine what to replenish under limited cash and delayed deliveries. The application makes that connection inspectable. A reader can start with the historical forecast comparison, choose a product and method, then vary inventory assumptions to see how the resulting ordering policy behaves.
+
+```mermaid
+flowchart LR
+  A[UCI transactions] --> B[Filter and aggregate daily sales]
+  B --> C[Chronological forecast experiment]
+  C --> D[Saved predictions and metrics]
+  D --> E[Validated public result bundle]
+  E --> F[Forecast explorer]
+  E --> G[Inventory simulation]
+  G --> H[Cost and fill-rate comparison]
+```
+
+### Forecast inputs and chronology
+
+The independent retail script constructs a daily series after UK/positive-sales filtering, duplicate removal, and product-code checks. Missing product-days become zero recorded positive sales. Product eligibility and seeded selection use the training period. Direct LightGBM inputs describe the series, forecast horizon, target weekday and origin-known demand history. The seasonal, rolling-mean and SBA methods supply comparisons with simpler demand assumptions.
+
+Validation, residual calibration and final testing occupy separate chronological windows. This matters because choosing the displayed model from final-test performance would change the evaluation question after observing the answer. The saved validation choice remains `mean_28`, while the result tables retain all four methods.
+
+### Inventory mechanics
+
+`supplysense/inventory.py::simulate` accepts one method's series/date predictions and explicit `Assumptions`. It validates finite, nonnegative values and rejects duplicate observations or mixed methods. The policy combines forecast demand with an optional fraction of the upper-band gap, schedules replenishment with a lead time, and tracks a shared purchasing budget. Costs include acquisition, holding, shortages and order fees. Fill rate expresses fulfilled proxy demand relative to total proxy demand.
+
+The default interactive budget is 3,000 cost units. The recorded research grid uses a separate training-derived reference budget. A comparison is meaningful only when methods share observations and assumptions, which `research.py` checks before computing rankings. A lower forecasting error can coexist with a higher simulated cost because shortage penalties, delivery timing and cash allocation affect the decision.
+
+### Reading the evidence
+
+The pooled four-method results above come from the saved two-origin experiment. The compact public prediction file contains the final origin only. Its 2,520 rows per method support a narrower recomputation, documented in the verification record. Keeping those scopes explicit makes the dashboard reproducible without treating the compact artifact as the complete experiment archive.
+
+The observed result is a functioning saved-results workflow and a historical comparison showing that forecasting and inventory rankings depend on different criteria. A useful next study would freeze a broader product sample and additional future windows before evaluating alternative allocation policies.
+
+### Repository map
+
+| Location | Responsibility |
+|---|---|
+| `app.py`, `supplysense/ui.py`, `supplysense/pages.py` | Navigation and interactive views |
+| `supplysense/artifacts.py` | Size, checksum and schema validation |
+| `supplysense/forecast.py` | Features, point metrics and interval metrics |
+| `supplysense/inventory.py` | Replenishment policy and economic assumptions |
+| `supplysense/research.py` | Matched comparisons and rankings |
+| `scripts/run_independent_retail.py` | Independent retail experiment |
+| `results/public_results.zip` | Compact public evidence |
+| `tests/` | Forecast, simulation and comparison fixtures |
